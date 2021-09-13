@@ -12,49 +12,32 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name="Ergebnisse")
-public class Ergebnisse {
-	
+@Table(name = "Ergebnisse")
+public class Ergebnisse{
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="messwert")
-	private double messwert;
+	@Column(name = "messwert")
+	private double Messwert;
 	
-	@Column(name="einheit")
-	private String einheit;
+	@Column(name = "einheit")
+	private String Einheit;
 	
-	@Column(name="material")
-	private String material;
+	@Column(name = "material")
+	private String Material;
 	
-	public String getMaterial() {
-		return material;
-	}
-
-	public void setMaterial(String material) {
-		this.material = material;
-	}
-
 	@Column(name = "laboreingangsdatum")
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Timestamp laboreingangsdatum;
+	private Timestamp Laboreingangsdatum;
 	
-	public Timestamp getLaboreingangsdatum() {
-		return laboreingangsdatum;
-	}
+	@Column(name = "status")
+	private String Status;
+	
+	@Column(name = "parameter")
+	private String Parameter;
 
-	public void setLaboreingangsdatum(Timestamp laboreingangsdatum) {
-		this.laboreingangsdatum = laboreingangsdatum;
-	}
-
-	@Column(name="status")
-	private String status;
-	
-	@Column(name="parameter")
-	private String parameter;
-	
 	public int getId() {
 		return id;
 	}
@@ -64,46 +47,53 @@ public class Ergebnisse {
 	}
 
 	public double getMesswert() {
-		return messwert;
+		return Messwert;
 	}
 
-	public void setMesswert(double messwert) {
-		this.messwert = messwert;
+	public void setMesswert(double Messwert) {
+		this.Messwert = Messwert;
 	}
 
 	public String getEinheit() {
-		return einheit;
+		return Einheit;
 	}
 
-	public void setEinheit(String einheit) {
-		this.einheit = einheit;
+	public void setEinheit(String Einheit) {
+		this.Einheit = Einheit;
 	}
 
-	
+	public String getMaterial() {
+		return Material;
+	}
 
+	public void setMaterial(String Material) {
+		this.Material = Material;
+	}
+
+	public Timestamp getLaboreingangsdatum() {
+		return Laboreingangsdatum;
+	}
+
+	public void setLaboreingangsdatum(Timestamp Laboreingangsdatum) {
+		this.Laboreingangsdatum = Laboreingangsdatum;
+	}
 
 	public String getStatus() {
-		return status;
+		return Status;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setStatus(String Status) {
+		this.Status = Status;
 	}
 
 	public String getParameter() {
-		return parameter;
+		return Parameter;
 	}
 
-	public void setParameter(String parameter) {
-		this.parameter = parameter;
+	public void setParameter(String Parameter) {
+		this.Parameter = Parameter;
 	}
-
 	
 	
 	
-
-	
-	
-	
-
 }
